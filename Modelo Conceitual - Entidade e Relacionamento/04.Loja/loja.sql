@@ -40,5 +40,13 @@ ALTER TABLE IF EXISTS public.produto
     ADD COLUMN cd_cat INT NOT NULL;
 
 
-ALTER TABLE produto ADD FOREIGN KEY(cd_cat) REFERENCES categoria (cd_cat);
+ALTER TABLE produto ADD FOREIGN KEY(cd_cat) REFERENCES categoria (cd_cat) ON DELETE CASCADE;
+
+
+--codigo SERIAL
+insert into produto (cd_prod,nome_prod,quant_prod,tipo_prod,cd_cat)
+VAlUES (DEFAULT,'XXXXX',1,1,2)
+--ou
+insert into produto (nome_prod,quant_prod,tipo_prod,cd_cat)
+VAlUES ('XXXXX',1,1,2)
 
